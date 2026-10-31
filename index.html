@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Aprende interés simple con conceptos, una calculadora interactiva y siete ejercicios resueltos de Ingeniería Económica.">
+  <meta name="theme-color" content="#142e3b">
+  <title>Interés simple | Ingeniería Económica</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="finance.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#contenido">Ir al contenido</a>
+<header class="site-header">
+  <a class="brand" href="#inicio" aria-label="Ingeniería Económica, inicio"><span class="brand-icon" aria-hidden="true">ie<span>↗</span></span><span>Ingeniería<br><strong>Económica</strong></span></a>
+  <nav aria-label="Navegación principal"><a href="#conceptos">Conceptos</a><a href="#calculadora">Calculadora</a><a href="#ejercicios">Ejercicios</a><a href="#equipo">Equipo</a></nav>
+  <span class="header-tag">UNIDAD 01 <span>•</span> TAREA 2</span>
+</header>
+<main id="contenido">
+  <section class="hero wrap" id="inicio">
+    <div class="hero-copy"><p class="eyebrow"><span class="eyebrow-line"></span> EL VALOR DEL DINERO EN EL TIEMPO</p><h1>Entiende el<br><em>interés simple.</em></h1><p class="hero-intro">Un capital, una tasa y un plazo. Explora cómo se relacionan y aprende a resolver cada incógnita, paso a paso.</p><a class="button button-dark" href="#calculadora">Explorar la calculadora <span aria-hidden="true">↗</span></a><div class="hero-meta"><span>Conceptos claros</span><i></i><span>7 ejercicios resueltos</span><i></i><span>Datos editables</span></div></div>
+    <div class="hero-visual" aria-label="Ejemplo de interés simple: capital de 1000 dólares al 12 por ciento anual durante ocho meses produce 80 dólares de interés y un monto de 1080 dólares.">
+      <div class="visual-top"><span>CRECIMIENTO LINEAL · ESQUEMA SIN ESCALA</span><span class="tiny-dot"></span></div>
+      <div class="visual-formula">I = C <span>×</span> i <span>×</span> n</div>
+      <div class="visual-chart" aria-hidden="true"><div class="chart-grid"></div><div class="chart-bar b1"><span>$1.000</span></div><div class="chart-bar b2"></div><div class="chart-bar b3"></div><div class="chart-bar b4"></div><div class="chart-bar b5"><span>$1.080</span><i>+$80</i></div><div class="chart-axis"><span>HOY</span><span>8 MESES</span></div></div>
+      <div class="visual-bottom"><span><b>12%</b> tasa anual</span><span>La base siempre es el capital inicial.</span></div>
+    </div>
+  </section>
+  <div class="university-strip"><div class="wrap"><span>Universidad Agraria del Ecuador</span><span>Computación en línea · 6S</span><span>2026–2027 · Ciclo II</span></div></div>
+
+  <section class="section wrap" id="conceptos">
+    <div class="section-heading"><div><p class="eyebrow">01 / COMPRENDE LA BASE</p><h2>El interés no se capitaliza.</h2></div><p>En el régimen simple, el interés de cada periodo se calcula sobre el mismo capital inicial. Por eso crece de forma lineal.</p></div>
+    <div class="concept-grid"><article><span class="symbol">C</span><h3>Capital inicial</h3><p>Dinero que se invierte o se presta al inicio. También se representa como P o VP.</p></article><article><span class="symbol">i</span><h3>Tasa por periodo</h3><p>Proporción que genera el capital en un periodo. El 12% anual se escribe como 0,12 por año.</p></article><article><span class="symbol">n</span><h3>Número de periodos</h3><p>Duración expresada en la misma unidad de la tasa. Con tasa anual, 8 meses equivalen a 8/12 de año.</p></article><article><span class="symbol">I / M</span><h3>Interés y monto</h3><p>I es la ganancia o costo financiero. M es el total al vencimiento: capital más interés.</p></article></div>
+    <div class="formula-reference"><div><p class="eyebrow">LAS RELACIONES CLAVE</p><p>Elige la fórmula según el dato que necesitas encontrar.</p></div><dl><div><dt>Interés</dt><dd>I = C × i × n</dd></div><div><dt>Monto</dt><dd>M = C(1 + i × n)</dd></div><div><dt>Capital desde interés</dt><dd>C = I / (i × n)</dd></div><div><dt>Tasa</dt><dd>i = I / (C × n)</dd></div><div><dt>Plazo</dt><dd>n = I / (C × i)</dd></div><div><dt>Valor presente</dt><dd>C = M / (1 + i × n)</dd></div></dl></div>
+    <p class="unit-rule"><span aria-hidden="true">↔</span><span><strong>Primero, iguala las unidades.</strong> Años ↔ meses: 1 año = 12 meses. Para plazos en días, elige y declara la base anual de 360 o 365 días. La calculadora hace esa conversión.</span></p>
+  </section>
+
+  <section class="calculator-section" id="calculadora"><div class="wrap">
+    <div class="section-heading"><div><p class="eyebrow">02 / EXPERIMENTA CON LOS DATOS</p><h2>Haz visible el cálculo.</h2></div><p>Modifica cualquier dato y observa el nuevo resultado. Cada operación muestra la conversión, la fórmula y la sustitución.</p></div>
+    <div class="calculator-grid">
+      <form class="calculator-form" id="calculator-form" novalidate>
+        <div class="form-heading"><span class="section-number">01</span><h3>Define la operación</h3><button type="button" class="text-button" id="reset">Restablecer</button></div>
+        <label for="mode">¿Qué quieres calcular?</label><select id="mode" name="mode"><option value="interest">Interés y monto final</option><option value="capital">Capital desde el interés</option><option value="rate">Tasa de interés</option><option value="time">Plazo de la inversión</option><option value="present">Valor presente desde el monto</option></select>
+        <p class="mode-description" id="mode-description">Conoce cuánto interés genera el capital y cuánto se recibe al vencimiento.</p>
+        <div class="form-heading second"><span class="section-number">02</span><h3>Ingresa los datos</h3></div>
+        <div class="field" id="capital-field"><label for="capital">Capital inicial <span>C · USD</span></label><div class="input-with-prefix"><span>$</span><input id="capital" type="number" min="0" step="any" value="1000" inputmode="decimal"></div></div>
+        <div class="field" id="interest-field" hidden><label for="interest">Interés generado <span>I · USD</span></label><div class="input-with-prefix"><span>$</span><input id="interest" type="number" min="0" step="any" value="15000" inputmode="decimal"></div></div>
+        <div class="field" id="amount-field" hidden><label for="amount">Monto futuro <span>M · USD</span></label><div class="input-with-prefix"><span>$</span><input id="amount" type="number" min="0" step="any" value="1500" inputmode="decimal"></div></div>
+        <div class="field-row"><div class="field" id="rate-field"><label for="rate">Tasa de interés <span>%</span></label><input id="rate" type="number" min="0" step="any" value="12" inputmode="decimal"></div><div class="field" id="period-field"><label for="ratePeriod" id="period-label">Periodo de la tasa</label><select id="ratePeriod"><option value="annual">Anual</option><option value="monthly">Mensual</option><option value="quarterly">Trimestral</option></select></div></div>
+        <div class="field-row"><div class="field" id="time-field"><label for="time">Plazo <span>n</span></label><input id="time" type="number" min="0" step="any" value="8" inputmode="decimal"></div><div class="field" id="unit-field"><label for="timeUnit" id="unit-label">Unidad del plazo</label><select id="timeUnit"><option value="years">Años</option><option value="months" selected>Meses</option><option value="days">Días</option></select></div></div>
+        <div class="field" id="basis-field"><label for="basis">Base anual para días</label><select id="basis"><option value="360">360 días · año comercial</option><option value="365">365 días · año de referencia</option></select><p class="field-help">Solo interviene si el plazo está expresado en días.</p></div>
+        <button class="button button-teal calculate-button" type="submit">Actualizar resultado <span aria-hidden="true">→</span></button><p class="auto-note"><span></span> Los cambios se calculan automáticamente</p>
+      </form>
+      <div class="result-column"><section class="result-panel" aria-live="polite" aria-atomic="true"><div class="result-header"><span id="result-kicker">TU RESULTADO</span><span id="result-badge">INTERÉS SIMPLE</span></div><p id="result-label">Interés generado</p><div class="result-value" id="result-value">$80,00</div><p class="result-explanation" id="result-explanation">El capital genera $80,00 en 8 meses.</p><div class="result-summary" id="result-summary"></div><div id="result-error" class="result-error" role="alert" hidden></div></section>
+      <section class="steps-panel"><div class="steps-header"><h3>El procedimiento</h3><span>PASO A PASO</span></div><ol id="calculation-steps"></ol><div class="timeline" id="timeline" aria-label="Línea de tiempo"><div class="timeline-labels"><span>HOY <strong id="timeline-capital">$1.000,00</strong></span><span>AL VENCIMIENTO <strong id="timeline-amount">$1.080,00</strong></span></div><div class="timeline-track"><i></i><span id="timeline-duration">8 meses</span><i></i></div></div></section>
+      </div>
+    </div><p class="calculation-note">Los importes se presentan en dólares de Estados Unidos (USD), con dos decimales. Se conserva la precisión durante el cálculo; las tasas y los plazos pueden mostrarse con más decimales. Modelo académico sin comisiones ni otros flujos.</p>
+  </div></section>
+
+  <section class="section wrap" id="ejercicios"><div class="section-heading"><div><p class="eyebrow">03 / DE LA FÓRMULA A LA PRÁCTICA</p><h2>Siete formas de resolver.</h2></div><p>Ejercicios de las semanas 2 y 3. Revisa cada desarrollo y cárgalo en la calculadora para explorar otros valores.</p></div><div class="exercise-list" id="exercise-list"></div></section>
+  <section class="learning-check wrap"><div><p class="eyebrow">ANTES DE TERMINAR</p><h2>Comprueba tu razonamiento.</h2><p>Si mantienes capital y tasa, duplicar el plazo duplica el interés. El monto suma ese interés al capital inicial.</p></div><a class="button button-outline" href="#calculadora">Pruébalo en la calculadora <span aria-hidden="true">↗</span></a></section>
+  <section class="section wrap team-section" id="equipo"><div class="team-heading"><p class="eyebrow">04 / AUTORÍA Y FUENTES</p><h2>Un proyecto en equipo.</h2><p>Ingeniería Económica<br>Docente: Ing. María del Pilar Avilés Vera</p></div><div><h3>Integrantes</h3><ul class="team-list"><li><span>01</span>Luna Peñafiel Romina</li><li><span>02</span>Pérez Abad Evelyn</li><li><span>03</span>Saa Chichande Solange</li><li><span>04</span>Sanaguaray Gusqui Jorge</li><li><span>05</span>Solís Calderón Dayanna</li></ul></div><div class="sources"><h3>Material de referencia</h3><p>Avilés Vera, M. del P. (2026). <cite>Unidad 1 de Ingeniería Económica, semana 2</cite> [Diapositivas de clase]. Conceptos y fórmulas: pp. 8–13 y 17–19. Ejercicios: pp. 14, 15, 18 y 20. Archivo: UNIDAD1_IE2_S2.pdf.</p><p>Avilés Vera, M. del P. (2026). <cite>Unidad 1 de Ingeniería Económica, semana 3</cite> [Diapositivas de clase]. Fórmulas y procedimientos: pp. 4–12. Archivo: UNIDAD1_IE2_S3.pdf.</p><p>Universidad Agraria del Ecuador. Material académico de la asignatura, período 2026–2027, Ciclo II.</p></div></section>
+</main>
+<footer><div class="wrap"><a class="footer-brand" href="#inicio">ie <span>Ingeniería Económica</span></a><span>Unidad 1 · Interés simple · Tarea 2</span><a href="#inicio">Volver al inicio ↑</a></div></footer>
+</body></html>

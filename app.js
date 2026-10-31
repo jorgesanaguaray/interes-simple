@@ -84,14 +84,10 @@ function update() {
     $('result-error').hidden = true;
     $('result-explanation').hidden = false;
     $('result-summary').hidden = false;
-    $('timeline').hidden = false;
     $('result-explanation').textContent = r.mode === 'rate' ? 'Tasa ' + period + ' para producir ' + money(r.interest) + ' durante ' + number(r.time) + ' ' + unit + '.' : r.mode === 'time' ? 'Con una tasa ' + period + ' de ' + number(r.rate * 100) + '%, el capital produce ' + money(r.interest) + '.' : r.mode === 'present' ? 'Este capital equivale a ' + money(r.amount) + ' al vencimiento.' : r.mode === 'capital' ? 'Este capital produce ' + money(r.interest) + ' durante ' + number(r.time) + ' ' + unit + '.' : 'El capital genera ' + money(r.interest) + ' en ' + number(r.time) + ' ' + unit + '.';
     const summaries = r.mode === 'interest' ? [['Capital inicial',money(r.capital)],['Monto al vencimiento',money(r.amount)]] : [['Interés generado',money(r.interest)],['Monto al vencimiento',money(r.amount)]];
     $('result-summary').innerHTML = summaries.map(([label,value]) => '<div><span>' + label + '</span><strong>' + value + '</strong></div>').join('');
     $('calculation-steps').innerHTML = buildSteps(r,input);
-    $('timeline-capital').textContent = money(r.capital);
-    $('timeline-amount').textContent = money(r.amount);
-    $('timeline-duration').textContent = number(r.time) + ' ' + unit;
   } catch (error) {
     $('result-label').textContent = 'Revisa los datos';
     $('result-value').textContent = '—';
@@ -99,7 +95,6 @@ function update() {
     $('result-error').hidden = false;
     $('result-summary').hidden = true;
     $('result-explanation').hidden = true;
-    $('timeline').hidden = true;
     $('calculation-steps').innerHTML = '<li><b>Completa los datos de la operación</b><span class="step-text">Usa valores no negativos. En los despejes, el divisor debe ser mayor que cero.</span></li>';
     for (const id of ['capital','interest','amount','rate','time']) if (!$(id).disabled && ($(id).value === '' || Number($(id).value) < 0)) { $(id).classList.add('is-invalid'); $(id).setAttribute('aria-invalid','true'); }
   }

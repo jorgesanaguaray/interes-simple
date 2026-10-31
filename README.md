@@ -1,8 +1,10 @@
 # Interés simple
 
-Proyecto académico de Ingeniería Económica de la Universidad Agraria del Ecuador, carrera de Computación en línea, 6S, período 2026-2027 Ciclo II.
+Avance del proyecto de Ingeniería Económica correspondiente a la Tarea 2 de la Universidad Agraria del Ecuador, carrera de Computación en línea, paralelo 6SB, grupo 6, período 2026-2027 Ciclo II.
 
-La página presenta conceptos y fórmulas de interés simple, una calculadora con datos editables y siete ejercicios desarrollados de las semanas 2 y 3. Permite calcular interés y monto, capital, tasa, plazo y valor presente, con conversión de unidades y base anual de 360 o 365 días.
+La página tiene una presentación sencilla para el avance: conceptos y fórmulas breves de interés simple, una calculadora con datos editables y siete ejercicios desarrollados de las semanas 2 y 3. Permite calcular interés y monto, capital, tasa, plazo y valor presente, con conversión de unidades y base anual de 360 o 365 días.
+
+Página web: https://jorgesanaguaray.github.io/interes-simple/
 
 ## Integrantes
 

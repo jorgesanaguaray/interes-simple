@@ -1,10 +1,21 @@
-# Interés simple
+# Proyecto del primer parcial de Ingeniería Económica
 
-Avance del proyecto de Ingeniería Económica correspondiente a la Tarea 2 de la Universidad Agraria del Ecuador, carrera de Computación en línea, paralelo 6SB, grupo 6, período 2026-2027 Ciclo II.
+Web académica interactiva de la Universidad Agraria del Ecuador, carrera de Ingeniería en Ciencias de la Computación en línea, paralelo **6SB**, **grupo 6**, período 2026–2027 Ciclo II.
 
-La página tiene una presentación sencilla para el avance: conceptos y fórmulas breves de interés simple, una calculadora con datos editables y siete ejercicios desarrollados de las semanas 2 y 3. Permite calcular interés y monto, capital, tasa, plazo y valor presente, con conversión de unidades y base anual de 360 o 365 días.
+**Página publicada:** https://jorgesanaguaray.github.io/interes-simple/
 
-Página web: https://jorgesanaguaray.github.io/interes-simple/
+## Contenido
+
+El proyecto reúne los cuatro bloques solicitados para el primer parcial y los organiza en nueve módulos:
+
+| Bloque | Módulos |
+| --- | --- |
+| Interés simple | Interés simple; descuento simple; diagrama de tiempo; ecuaciones de valor simple |
+| Interés compuesto | Interés compuesto; tasas nominales, efectivas y equivalentes; ecuaciones de valor compuesto |
+| Anualidades | Series vencidas, anticipadas, diferidas y perpetuas; cálculo del pago desde el valor presente |
+| Gradientes | Aritméticos y geométricos; series crecientes y decrecientes; valor presente y futuro |
+
+Cada módulo contiene conceptos, fórmulas, condiciones de cálculo, una calculadora editable, procedimientos verificables y ejercicios resueltos. Los diagramas se generan a partir de los flujos registrados. El proyecto incluye **25 ejercicios**: siete del material de clase de interés simple y dieciocho casos académicos propuestos por el grupo.
 
 ## Integrantes
 
@@ -14,22 +25,32 @@ Página web: https://jorgesanaguaray.github.io/interes-simple/
 - Sanaguaray Gusqui Jorge
 - Solís Calderón Dayanna
 
-Docente: Ing. María del Pilar Avilés Vera.
+**Docente:** Ing. María del Pilar Avilés Vera.
+
+## Uso
+
+Selecciona un tema en la navegación. Cambia los datos de la calculadora para actualizar los resultados y sus pasos. En los ejercicios, el botón **Cargar datos en la calculadora** permite reproducir el caso y modificarlo.
+
+En diagramas y ecuaciones, las entradas se registran con signo positivo y las salidas con signo negativo. Las fechas y tasas deben usar la misma unidad. La herramienta declara la fecha focal y la convención de traslado. En interés simple, cambiar la fecha focal puede modificar la equivalencia; bajo capitalización compuesta se conserva el pago equivalente.
+
+Los importes se expresan en dólares de Estados Unidos. Se conserva la precisión interna y se redondea al presentar la respuesta. Los ejemplos son modelos académicos sin comisiones ni otros flujos adicionales.
 
 ## Archivos
 
-- `index.html`: contenido, navegación y controles de la interfaz.
-- `styles.css`: estilos y adaptación a pantallas de distintos tamaños.
-- `finance.js`: operaciones de interés simple y validación de datos.
-- `app.js`: ejercicios, procedimientos y actualización de la interfaz.
-- `.nojekyll`: permite publicar los archivos estáticos directamente.
+- `index.html`: estructura y navegación del proyecto.
+- `styles.css`: diseño adaptable, accesibilidad y presentación para impresión.
+- `module-data.js`: conceptos, fórmulas, campos, ejemplos y referencias.
+- `app.js`: navegación por temas, formularios, resultados y diagramas SVG.
+- `finance-core.js`: motor numérico de los nueve módulos, independiente de la interfaz.
+- `finance.js`: operaciones de interés simple conservadas y reutilizadas por el motor.
+- `.nojekyll`: publicación estática directa mediante GitHub Pages.
 
-La página funciona con HTML, CSS y JavaScript, sin instalar dependencias ni ejecutar un proceso de compilación. Se puede abrir `index.html` en el navegador. Todos los recursos y enlaces internos usan rutas relativas, por lo que funciona dentro de la ruta de un repositorio de GitHub Pages.
+La web utiliza HTML, CSS y JavaScript sin dependencias externas ni proceso de compilación. Todos los recursos usan rutas relativas, compatibles con la carpeta de proyecto `/interes-simple/`. Puede ejecutarse con un servidor HTTP estático o abrirse desde `index.html`.
 
-## Material de referencia
+## Referencias
 
-Avilés Vera, M. del P. (2026). *Unidad 1 de Ingeniería Económica, semana 2* [Diapositivas de clase]. Universidad Agraria del Ecuador. Conceptos y fórmulas: pp. 8-13 y 17-19. Ejercicios: pp. 14, 15, 18 y 20. Archivo `UNIDAD1_IE2_S2.pdf`.
+- Avilés Vera, M. del P. (2026). *Unidad 1 de Ingeniería Económica, semanas 2 y 3* [Diapositivas de clase]. Universidad Agraria del Ecuador. Archivos `UNIDAD1_IE2_S2.pdf` y `UNIDAD1_IE2_S3.pdf`.
+- Krajisnik, S., Leppinen, C. y Loncar-Vines, J. (s. f.). *Business Math: A Step-by-Step Handbook Abridged*. Capítulos 9, 11 y 12. https://ecampusontario.pressbooks.pub/businessmathtextbook/
+- Lipsett, M. G. (2010). *A Brief Guide to Engineering Management Financial Calculations*. University of Alberta. https://sites.ualberta.ca/~mlipsett/ENGM401_620/Guide_to_Calculations.pdf
 
-Avilés Vera, M. del P. (2026). *Unidad 1 de Ingeniería Económica, semana 3* [Diapositivas de clase]. Universidad Agraria del Ecuador. Fórmulas y procedimientos: pp. 4-12. Archivo `UNIDAD1_IE2_S3.pdf`.
-
-Los cálculos son ejercicios académicos sin comisiones ni otros flujos. Los importes se expresan en dólares de Estados Unidos. Los resultados conservan su precisión durante el cálculo y se redondean al presentarlos.
+Las referencias específicas de cada tema también aparecen en la web, junto con el apartado **Equipo y fuentes**.

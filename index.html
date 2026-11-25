@@ -2,73 +2,31 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Avance de la Tarea 2 de Ingeniería Económica: interés simple, calculadora y ejercicios resueltos. Paralelo 6SB, grupo 6.">
-  <meta name="theme-color" content="#264d73">
-  <title>Interés simple | Grupo 6 · 6SB</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Proyecto del primer parcial de Ingeniería Económica. Conceptos, fórmulas, diagramas y ejercicios interactivos. Universidad Agraria del Ecuador, paralelo 6SB, grupo 6.">
+  <meta name="theme-color" content="#142d3b">
+  <title>Ingeniería Económica | Primer parcial · Grupo 6</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23142d3b'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Georgia' font-size='35' fill='white'%3Eie%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css?v=20261125">
   <script src="finance.js" defer></script>
-  <script src="app.js" defer></script>
+  <script src="finance-core.js" defer></script>
+  <script src="module-data.js?v=20261125" defer></script>
+  <script src="app.js?v=20261125" defer></script>
 </head>
 <body>
-<a class="skip-link" href="#contenido">Ir al contenido</a>
-<header class="site-header" id="inicio"><div class="wrap">
-  <p class="course">Universidad Agraria del Ecuador · Ingeniería Económica</p>
-  <h1>Interés simple</h1>
-  <p class="subtitle">Avance del proyecto · Tarea 2</p>
-  <p class="identity"><strong>Paralelo 6SB · Grupo 6</strong> <span>Computación en línea · 2026–2027 · Ciclo II</span></p>
-  <nav aria-label="Navegación principal"><a href="#conceptos">Conceptos y fórmulas</a><a href="#calculadora">Calculadora</a><a href="#ejercicios">Ejercicios</a><a href="#equipo">Equipo y fuentes</a></nav>
-</div></header>
-<main class="wrap" id="contenido">
-  <section id="conceptos">
-    <h2>Conceptos y fórmulas</h2>
-    <p>El interés simple se calcula sobre el capital inicial, que permanece constante. Los intereses de periodos anteriores no se incorporan al capital.</p>
-    <dl class="definitions">
-      <div><dt>C · Capital</dt><dd>Dinero que se invierte o se presta al inicio.</dd></div>
-      <div><dt>i · Tasa</dt><dd>Interés por periodo, expresado en decimal: 12% = 0,12.</dd></div>
-      <div><dt>n · Plazo</dt><dd>Número de periodos en la misma unidad de la tasa.</dd></div>
-      <div><dt>I · Interés y M · Monto</dt><dd>I es la ganancia o costo financiero; M es el capital más el interés.</dd></div>
-    </dl>
-    <div class="table-scroll"><table class="formula-table"><caption>Fórmulas según la incógnita</caption><thead><tr><th scope="col">Cálculo</th><th scope="col">Fórmula</th><th scope="col">Cálculo</th><th scope="col">Fórmula</th></tr></thead><tbody>
-      <tr><td>Interés</td><td>I = C × i × n</td><td>Monto</td><td>M = C(1 + i × n)</td></tr>
-      <tr><td>Capital desde interés</td><td>C = I / (i × n)</td><td>Tasa</td><td>i = I / (C × n)</td></tr>
-      <tr><td>Plazo</td><td>n = I / (C × i)</td><td>Valor presente</td><td>C = M / (1 + i × n)</td></tr>
-    </tbody></table></div>
-    <p class="note"><strong>Unidades:</strong> si la tasa es anual, el plazo debe expresarse en años. Por ejemplo, 8 meses = 8/12 de año. Para días, se declara una base anual de 360 o 365 días.</p>
-  </section>
-  <section id="calculadora">
-    <h2>Calculadora de interés simple</h2>
-    <p>Selecciona la incógnita y cambia los datos para actualizar el resultado y el procedimiento.</p>
-    <div class="calculator-grid">
-      <form class="calculator-form" id="calculator-form" novalidate>
-        <div class="form-heading"><h3>Datos</h3><button type="button" class="text-button" id="reset">Restablecer</button></div>
-        <label for="mode">Calcular</label><select id="mode" name="mode"><option value="interest">Interés y monto final</option><option value="capital">Capital desde el interés</option><option value="rate">Tasa de interés</option><option value="time">Plazo de la inversión</option><option value="present">Valor presente desde el monto</option></select>
-        <p class="mode-description" id="mode-description">Conoce cuánto interés genera el capital y cuánto se recibe al vencimiento.</p>
-        <div class="field" id="capital-field"><label for="capital">Capital inicial (C · USD)</label><input id="capital" type="number" min="0" step="any" value="1000" inputmode="decimal"></div>
-        <div class="field" id="interest-field" hidden><label for="interest">Interés generado (I · USD)</label><input id="interest" type="number" min="0" step="any" value="15000" inputmode="decimal"></div>
-        <div class="field" id="amount-field" hidden><label for="amount">Monto futuro (M · USD)</label><input id="amount" type="number" min="0" step="any" value="1500" inputmode="decimal"></div>
-        <div class="field-row"><div class="field" id="rate-field"><label for="rate">Tasa de interés (%)</label><input id="rate" type="number" min="0" step="any" value="12" inputmode="decimal"></div><div class="field" id="period-field"><label for="ratePeriod" id="period-label">Periodo de la tasa</label><select id="ratePeriod"><option value="annual">Anual</option><option value="monthly">Mensual</option><option value="quarterly">Trimestral</option></select></div></div>
-        <div class="field-row"><div class="field" id="time-field"><label for="time">Plazo</label><input id="time" type="number" min="0" step="any" value="8" inputmode="decimal"></div><div class="field" id="unit-field"><label for="timeUnit" id="unit-label">Unidad del plazo</label><select id="timeUnit"><option value="years">Años</option><option value="months" selected>Meses</option><option value="days">Días</option></select></div></div>
-        <div class="field" id="basis-field"><label for="basis">Base anual para días</label><select id="basis"><option value="360">360 días · año comercial</option><option value="365">365 días · año de referencia</option></select><p class="field-help">Solo interviene si el plazo se expresa en días.</p></div>
-        <button class="calculate-button" type="submit">Calcular</button><p class="auto-note">El resultado también se actualiza al cambiar los datos.</p>
-      </form>
-      <div class="result-column">
-        <section class="result-panel" aria-live="polite" aria-atomic="true"><h3>Resultado</h3><p id="result-label">Interés generado</p><p class="result-value" id="result-value">$80,00</p><p class="result-explanation" id="result-explanation">El capital genera $80,00 en 8 meses.</p><div class="result-summary" id="result-summary"></div><p id="result-error" class="result-error" role="alert" hidden></p></section>
-        <section class="steps-panel"><h3>Procedimiento</h3><ol id="calculation-steps"></ol></section>
-      </div>
-    </div>
-    <p class="note">Importes en dólares de Estados Unidos (USD), presentados con dos decimales. El cálculo conserva la precisión antes del redondeo. Ejercicios académicos sin comisiones ni otros flujos.</p>
-  </section>
-  <section id="ejercicios"><h2>Ejercicios desarrollados</h2><p>Ejercicios de las semanas 2 y 3. Abre cada desarrollo o carga sus datos en la calculadora para modificarlos.</p><div class="exercise-list" id="exercise-list"></div></section>
-  <section id="equipo">
-    <h2>Equipo y fuentes</h2>
-    <p><strong>Paralelo 6SB · Grupo 6</strong><br>Docente: Ing. María del Pilar Avilés Vera</p>
-    <div class="team-sources">
-      <div><h3>Integrantes</h3><ul class="team-list"><li>Luna Peñafiel Romina</li><li>Pérez Abad Evelyn</li><li>Saa Chichande Solange</li><li>Sanaguaray Gusqui Jorge</li><li>Solís Calderón Dayanna</li></ul></div>
-      <div class="sources"><h3>Fuentes</h3><p>Avilés Vera, M. del P. (2026). <cite>Unidad 1 de Ingeniería Económica, semana 2</cite> [Diapositivas de clase]. Conceptos y fórmulas: pp. 8–13 y 17–19. Ejercicios: pp. 14, 15, 18 y 20. Archivo: UNIDAD1_IE2_S2.pdf.</p><p>Avilés Vera, M. del P. (2026). <cite>Unidad 1 de Ingeniería Económica, semana 3</cite> [Diapositivas de clase]. Fórmulas y procedimientos: pp. 4–12. Archivo: UNIDAD1_IE2_S3.pdf.</p><p>Universidad Agraria del Ecuador. Material de la asignatura, período 2026–2027, Ciclo II.</p></div>
-    </div>
-  </section>
-</main>
-<footer><div class="wrap"><span>Avance del proyecto · Tarea 2 · Paralelo 6SB · Grupo 6</span><a href="#inicio">Volver al inicio</a></div></footer>
+  <a class="skip-link" href="#main">Ir al contenido</a>
+  <header class="mobile-header"><a href="#inicio" class="mobile-brand">Ingeniería Económica</a><button id="menu-toggle" type="button" aria-controls="sidebar" aria-expanded="false">Temas</button></header>
+  <aside id="sidebar" class="sidebar" aria-label="Navegación del proyecto">
+    <a class="project-brand" href="#inicio"><span class="brand-mark" aria-hidden="true">ie</span><span>Ingeniería<br><strong>Económica</strong></span></a>
+    <div class="sidebar-meta"><span>PROYECTO DEL I PARCIAL</span><strong>6SB · Grupo 6</strong></div>
+    <nav id="course-nav" aria-label="Temas del primer parcial"></nav>
+    <div class="sidebar-bottom"><a href="#equipo">Equipo y fuentes</a><span>Universidad Agraria del Ecuador<br>2026–2027 · Ciclo II</span></div>
+  </aside>
+  <div class="app-shell">
+    <header class="topbar"><div id="breadcrumb">Proyecto del primer parcial</div><span class="topbar-identity">Computación en línea <b>6SB · Grupo 6</b></span></header>
+    <main id="main" tabindex="-1"></main>
+    <footer class="page-footer"><span>Universidad Agraria del Ecuador · Ingeniería Económica</span><span>Primer parcial · 2026–2027 Ciclo II</span></footer>
+  </div>
+  <noscript><div class="noscript">Activa JavaScript para utilizar las calculadoras y consultar los módulos del proyecto.</div></noscript>
 </body>
 </html>

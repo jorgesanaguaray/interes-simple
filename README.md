@@ -15,7 +15,7 @@ El proyecto reúne los cuatro bloques solicitados para el primer parcial y los o
 | Anualidades | Series vencidas, anticipadas, diferidas y perpetuas; cálculo del pago desde el valor presente |
 | Gradientes | Aritméticos y geométricos; series crecientes y decrecientes; valor presente y futuro |
 
-Cada módulo contiene conceptos, fórmulas, condiciones de cálculo, una calculadora editable, procedimientos verificables y ejercicios resueltos. Los diagramas se generan a partir de los flujos registrados. El proyecto incluye **25 ejercicios**: siete del material de clase de interés simple y dieciocho casos académicos propuestos por el grupo.
+Cada módulo contiene conceptos, fórmulas, condiciones de cálculo, una calculadora editable, procedimientos verificables y ejercicios resueltos. Los diagramas se generan a partir de los flujos registrados. El proyecto incluye **35 ejercicios**: dieciocho del material de clase y diecisiete casos académicos propuestos por el grupo. Las siete semanas de diapositivas de la docente son la referencia principal; cada caso de clase indica su archivo, semana y página.
 
 ## Integrantes
 
@@ -49,8 +49,8 @@ La web utiliza HTML, CSS y JavaScript sin dependencias externas ni proceso de co
 
 ## Referencias
 
-- Avilés Vera, M. del P. (2026). *Unidad 1 de Ingeniería Económica, semanas 2 y 3* [Diapositivas de clase]. Universidad Agraria del Ecuador. Archivos `UNIDAD1_IE2_S2.pdf` y `UNIDAD1_IE2_S3.pdf`.
+- Avilés Vera, M. del P. (2026). *Ingeniería Económica, semanas 1 a 7* [Diapositivas de clase]. Universidad Agraria del Ecuador. Unidad 1: `S1-U1_IE_2C.pdf`, `S2-U1_IE_2C.pdf`, `S3-U1_IE_2C.pdf`, `S4-U1_IE_2C.pdf` y `S5-U1_IE_2C.pdf`. Unidad 2: `S6-U2_IE_2C .pdf` y `S7-U2_IE_2C .pdf`. Las referencias específicas y páginas están en cada módulo.
 - Krajisnik, S., Leppinen, C. y Loncar-Vines, J. (s. f.). *Business Math: A Step-by-Step Handbook Abridged*. Capítulos 9, 11 y 12. https://ecampusontario.pressbooks.pub/businessmathtextbook/
 - Lipsett, M. G. (2010). *A Brief Guide to Engineering Management Financial Calculations*. University of Alberta. https://sites.ualberta.ca/~mlipsett/ENGM401_620/Guide_to_Calculations.pdf
 
-Las referencias específicas de cada tema también aparecen en la web, junto con el apartado **Equipo y fuentes**.
+Las referencias específicas de cada tema también aparecen en la web, junto con el apartado **Equipo y fuentes**. El caso de valor presente de la semana 5, página 8, se recalcula como $4.101,74; la lámina muestra $4.101,62. El caso aritmético de la semana 7, página 10, utiliza Aₖ = A₁ + (k − 1)G, coherente con sus datos y su tabla. En las anualidades, la inmediata corresponde a d = 0 y el diferimiento se declara en periodos de pago completos.
